@@ -20,13 +20,16 @@ $(document).ready(function() {
         }
     });
 
-    $('div.photo').on('mouseenter mouseleave', function(event) {
-        var $details = $(this).find('.details');
-        if (event.type == 'mouseenter'){
+    $('#gallery').on('mouseover mouseout', function(event) {
+        var $target = $(event.target).closest('div.photo');
+        var $details = $target.find('.details');
+        var $related = $(event.relatedTarget).closest('div.photo');
+
+        if (event.type == 'mouseover' && $target.length) {
             $details.fadeTo('fast', 0.7);
         }
-        else {
+        else if (event.type == 'mouseout' && !$related.length) {
             $details.fadeOut('fast');
         }
-    });
+    })
 });

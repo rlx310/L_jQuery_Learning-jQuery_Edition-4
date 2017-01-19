@@ -99,5 +99,17 @@ a {
 }
 
 .selected .details {
-    background-color: #000;
+    background-color: #060;
+}
+
+.loading {
+    background-color: #aaa;
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    bottom: 0;
+    /*display: none;*/
+}
+.hide {
+    display: none;
 }
